@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Proyecto Web</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="login-container">
+    <h2>Iniciar Sesión</h2>
+    <input type="email" id="email" placeholder="Correo electrónico" />
+    <input type="password" id="password" placeholder="Contraseña" />
+    <button id="loginBtn">Entrar</button>
+
+    <p>¿No tienes cuenta? <a href="#" id="registerLink">Crear nueva</a></p>
+  </div>
+
+  <div class="register-container hidden">
+    <h2>Registrar nuevo usuario</h2>
+    <input type="email" id="newEmail" placeholder="Correo electrónico" />
+    <input type="password" id="newPassword" placeholder="Contraseña" />
+    <button id="registerBtn">Registrar</button>
+    <p><a href="#" id="backToLogin">Volver al login</a></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

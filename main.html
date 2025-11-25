@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página principal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="header-image">
+        <img src="https://www.freepik.es/vector-premium/fondo-patron-silueta-circulos-colores-sobre-fondo-blanco_23159783.htm" alt="imagen">
+    </div>
+  <header>
+    <h1>Bienvenido </h1>
+    <button id="logoutBtn">Cerrar sesión</button>
+  </header>
+
+  <section class="juego">
+    <h2> Juego: Atrapá el círculo</h2>
+    <div id="gameArea"></div>
+    <p>Puntaje: <span id="score">0</span></p>
+  </section>
+
+  <section class="api-section">
+    <h2>🌦 Información del clima (API)</h2>
+    <p id="apiWeather">Cargando...</p>
+
+<div id="apiFact" class="fact-box">Cargando dato curioso...</div>
+  </section>
+
+  <section class="fact-card">
+  <h2>Dato curioso</h2>
+  <div id="apiInfo" class="fact-box">
+    Cargando dato curioso...
+  </div>
+</section>
+
+  <script src="script.js"></script>
+</body>
+</html>
