@@ -54,7 +54,6 @@ input:focus {
   outline: none;
 }
 
-/* --- BOTONES PROFESIONALES --- */
 button {
   width: 100%;
   background: linear-gradient(135deg, #007bff, #005fcc);
@@ -74,7 +73,6 @@ button:hover {
   transform: scale(1.04);
 }
 
-/* --- ÁREA DEL JUEGO --- */
 #gameArea {
   width: 300px;
   height: 300px;
@@ -88,7 +86,6 @@ button:hover {
   backdrop-filter: blur(4px);
 }
 
-/* --- CÍRCULOS DEL JUEGO --- */
 .circle {
   width: 35px;
   height: 35px;
@@ -103,3 +100,4 @@ button:hover {
 .circle:hover {
   transform: scale(1.2);
 }
+
