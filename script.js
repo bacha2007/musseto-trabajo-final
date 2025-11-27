@@ -1,4 +1,3 @@
-
 const loginBtn = document.getElementById("loginBtn");
 const registerBtn = document.getElementById("registerBtn");
 const registerLink = document.getElementById("registerLink");
@@ -25,12 +24,12 @@ if (registerBtn) {
 
     if (email && pass) {
       localStorage.setItem(email, pass);
-      alert("Usuario registrado con éxito");
+      alert("Usuario registrado correctamente");
 
       document.querySelector(".register-container").classList.add("hidden");
       document.querySelector(".login-container").classList.remove("hidden");
     } else {
-      alert("Complete todos los campos");
+      alert("Completa los campos por favor");
     }
   };
 }
@@ -41,71 +40,10 @@ if (loginBtn) {
     const pass = document.getElementById("password").value;
 
     if (localStorage.getItem(email) === pass) {
-      alert`(Acceso permitido. Se ha enviado una alerta a ${email};`
-      window.location.href = "main.html";
+      alert(`Acceso permitido. Se mandó una alerta a ${email}`);
+      window.location.href = "main.html"; // tu juego
     } else {
       alert("Usuario o contraseña incorrectos");
     }
   };
-}
-
-const logoutBtn = document.getElementById("logoutBtn");
-if (logoutBtn) {
-  logoutBtn.onclick = () => {
-    window.location.href = "index.html";
-  };
-}
-
-function cargarDatoTraducido() {
-  const apiInfo = document.getElementById("apiInfo");
-  if (!apiInfo) return;
-
-  fetch("https://uselessfacts.jsph.pl/random.json?language=en")
-    .then(res => res.json())
-    .then(data => {
-      const fact = data.text;
-      return fetch(
-        `https://api.mymemory.translated.net/get?q=${encodeURIComponent(fact)}&langpair=en|es`
-      );
-    })
-    .then(res => res.json())
-    .then(translation => {
-      apiInfo.textContent = translation.responseData.translatedText;
-    })
-    .catch(() => {
-      apiInfo.textContent = "No se pudo obtener información.";
-    });
-}
-
-
-const gameArea = document.getElementById("gameArea");
-if (gameArea) {
-  let score = 0;
-  const scoreEl = document.getElementById("score");
-
-  function spawnCircle() {
-    const circle = document.createElement("div");
-    circle.classList.add("circle");
-    circle.style.top = Math.random() * 270 + "px";
-    circle.style.left = Math.random() * 270 + "px";
-    gameArea.appendChild(circle);
-
-    circle.onclick = () => {
-      score++;
-      scoreEl.textContent = score;
-
-      cargarDatoTraducido();
-
-      circle.remove();
-    };
-
-    setTimeout(() => circle.remove(), 1000);
-  }
-
-  setInterval(spawnCircle, 800);
-}
-
-const apiInfoInicial = document.getElementById("apiInfo");
-if (apiInfoInicial) {
-  cargarDatoTraducido();
 }
