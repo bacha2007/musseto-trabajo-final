@@ -1,13 +1,13 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url("fondo-circulos-varios-colores_78370-2873.png") no-repeat center center fixed;
-  background-size: cover;
+  background: linear-gradient(135deg, #e0f7fa, #80deea);
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 
 .login-container, 
 .register-container {
@@ -134,3 +134,4 @@ button:hover {
   font-size: 14px;
   text-align: center;
 }
+
