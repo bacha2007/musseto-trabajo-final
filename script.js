@@ -1,11 +1,9 @@
-//login
-// Captura los botones y enlaces del formulario
+
 const loginBtn = document.getElementById("loginBtn");
 const registerBtn = document.getElementById("registerBtn");
 const registerLink = document.getElementById("registerLink");
 const backToLogin = document.getElementById("backToLogin");
 
-// Cambia de la vista de login a la vista de registro
 if (registerLink) {
   registerLink.onclick = () => {
     document.querySelector(".login-container").classList.add("hidden");
@@ -13,7 +11,6 @@ if (registerLink) {
   };
 }
 
-// Vuelve desde el registro al login
 if (backToLogin) {
   backToLogin.onclick = () => {
     document.querySelector(".register-container").classList.add("hidden");
@@ -21,41 +18,37 @@ if (backToLogin) {
   };
 }
 
-// Registro de usuario usando LocalStorage
 if (registerBtn) {
   registerBtn.onclick = () => {
     const email = document.getElementById("newEmail").value;
-    const pass = document.getElementById("newPassword").value;
+    const contra = document.getElementById("newPassword").value;
 
-    if (email && pass) {
+    if (email && contra) {
       localStorage.setItem(email, pass);
       alert("Usuario registrado con éxito");
 
       document.querySelector(".register-container").classList.add("hidden");
       document.querySelector(".login-container").classList.remove("hidden");
     } else {
-      alert("Complete todos los campos");
+      alert("Completa los campos capo");
     }
   };
 }
 
-// Inicio de sesión verificando datos en LocalStorage
 if (loginBtn) {
   loginBtn.onclick = () => {
     const email = document.getElementById("email").value;
-    const pass = document.getElementById("password").value;
+    const contra = document.getElementById("password").value;
 
     if (localStorage.getItem(email) === pass) {
       alert`(Acceso permitido. Se ha enviado una alerta a ${email};`
       window.location.href = "main.html";
     } else {
-      alert("Usuario o contraseña incorrectos");
+      alert("Usuario o contraseña mal hechos");
     }
   };
 }
 
-//Pagina principal
-// Botón para cerrar sesión (solo redirige al index)
 const logoutBtn = document.getElementById("logoutBtn");
 if (logoutBtn) {
   logoutBtn.onclick = () => {
@@ -63,7 +56,7 @@ if (logoutBtn) {
   };
 }
 
-/*funcion para traducir los datos*/
+
 function cargarDatoTraducido() {
   const apiInfo = document.getElementById("apiInfo");
   if (!apiInfo) return;
@@ -86,7 +79,6 @@ function cargarDatoTraducido() {
 }
 
 
-//juego dinamico
 const gameArea = document.getElementById("gameArea");
 if (gameArea) {
   let score = 0;
@@ -103,7 +95,6 @@ if (gameArea) {
       score++;
       scoreEl.textContent = score;
 
-      //Cargar dato cada vez que se hace click en un círculo
       cargarDatoTraducido();
 
       circle.remove();
@@ -115,8 +106,8 @@ if (gameArea) {
   setInterval(spawnCircle, 800);
 }
 
-/*cargar un dato al empezar la pag*/
 const apiInfoInicial = document.getElementById("apiInfo");
 if (apiInfoInicial) {
   cargarDatoTraducido();
+
 }
