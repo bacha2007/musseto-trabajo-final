@@ -7,12 +7,10 @@ body {
   flex-direction: column;
   align-items: center;
 }
-
-
 .login-container, 
 .register-container {
   margin-top: 80px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   padding: 25px 30px;
   border-radius: 15px;
   width: 320px;
@@ -69,11 +67,18 @@ button:hover {
   background: linear-gradient(135deg, #005fcc, #003f99);
   transform: scale(1.04);
 }
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 #gameArea {
   width: 300px;
   height: 300px;
-  background: url('ruta-imagen-juego.jpg') no-repeat center center;
-  background-size: cover;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
   border: 3px solid #007bff;
   border-radius: 20px;
   box-shadow: 0 8px 15px rgba(0,0,0,0.3);
@@ -85,8 +90,7 @@ button:hover {
 
 #gameArea:hover {
   box-shadow: 0 12px 25px rgba(0,0,0,0.4);
-}
-
+}   
 .circle {
   width: 30px;
   height: 30px;
@@ -112,9 +116,8 @@ button:hover {
   transform: scale(0.8);
   transition: transform 0.1s ease;
 }
-
 #score {
-  background: rgba(0, 123, 255, 0.1);
+  background: rgba(0, 123, 255, 0.15);
   padding: 5px 10px;
   border-radius: 10px;
   border: 1px solid #007bff;
@@ -123,9 +126,8 @@ button:hover {
   display: inline-block;
   margin-left: 5px;
 }
-
 .fact-box {
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.95);
   padding: 15px;
   margin: 10px auto;
   width: 300px;
@@ -134,5 +136,3 @@ button:hover {
   font-size: 14px;
   text-align: center;
 }
-
-
