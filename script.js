@@ -20,31 +20,30 @@ if (backToLogin) {
 
 if (registerBtn) {
   registerBtn.onclick = () => {
-    const email = document.getElementById("newEmail").value;
-    const contra = document.getElementById("newPassword").value;
+    const email = document.getElementById("nuevoEmail").value;
+    const pass = document.getElementById("nuevacontra").value;
 
-    if (email && contra) {
+    if (email && pass) {
       localStorage.setItem(email, pass);
-      alert("Usuario registrado con éxito");
+      alert("usuario bien hecho");
 
       document.querySelector(".register-container").classList.add("hidden");
       document.querySelector(".login-container").classList.remove("hidden");
     } else {
-      alert("Completa los campos capo");
+      alert("Completa los campos por favor");
     }
   };
 }
-
 if (loginBtn) {
   loginBtn.onclick = () => {
     const email = document.getElementById("email").value;
-    const contra = document.getElementById("password").value;
+    const pass = document.getElementById("contra").value;
 
     if (localStorage.getItem(email) === pass) {
-      alert`(Acceso permitido. Se ha enviado una alerta a ${email};`
+      alert`(Acceso permitido. Se mando una alerta a ${email};`
       window.location.href = "main.html";
     } else {
-      alert("Usuario o contraseña mal hechos");
+      alert("Usuario o contraseña mal hecho");
     }
   };
 }
@@ -78,7 +77,6 @@ function cargarDatoTraducido() {
     });
 }
 
-
 const gameArea = document.getElementById("gameArea");
 if (gameArea) {
   let score = 0;
@@ -109,5 +107,4 @@ if (gameArea) {
 const apiInfoInicial = document.getElementById("apiInfo");
 if (apiInfoInicial) {
   cargarDatoTraducido();
-
 }
