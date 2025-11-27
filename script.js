@@ -1,5 +1,3 @@
-console.log("SCRIPT CARGADO");
-console.log("gameArea =", document.getElementById("gameArea"));
 
 const loginBtn = document.getElementById("loginBtn");
 const registerBtn = document.getElementById("registerBtn");
@@ -110,4 +108,5 @@ const apiInfoInicial = document.getElementById("apiInfo");
 if (apiInfoInicial) {
   cargarDatoTraducido();
 }
+
 
